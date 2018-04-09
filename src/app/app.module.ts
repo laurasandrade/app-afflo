@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 
 @NgModule({
@@ -15,7 +15,9 @@ import { routing } from './app.routes';
     ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
