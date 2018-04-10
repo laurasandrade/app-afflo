@@ -20,6 +20,8 @@ export class CadastroComponent implements OnInit {
           confirmaSenha:['',Validators.compose([Validators.required,Validators.minLength(6)])]
       });
    }
+ 
+ 
 
   ngOnInit() {
   }

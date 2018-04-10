@@ -13,17 +13,17 @@
       </span> 
    </div>
     <label for="inputEmail" class="sr-only">Email</label>
-    <input  formControlName = "email" name="email" type="email" id="inputEmail" class="form-control" placeholder="Digite seu email" required autocomplete="off">
+    <input  formControlName = "email" name="email" type="email" id="inputEmail" class="form-control" placeholder="Digite seu email" autocomplete="off">
     <div *ngIf="meuForm.controls.email.invalid">
       <span *ngIf="meuForm.controls.email.errors.required" class="form-control alert-danger">
           Email obrigatório!
       </span> 
-      <span *ngIf="meuForm.controls.email.errors.email" class="form-control alert-danger">
+      <span *ngIf="meuForm.controls.email.errors.email && !meuForm.controls.email.value==''" class="form-control alert-danger">
         Email inválido!
       </span> 
    </div>
     <label for="inputPassword" class="sr-only">Senha</label>
-    <input  formControlName = "senha" name="senha" type="password" id="inputPassword" class="form-control" placeholder="Digite uma senha" required>
+    <input  formControlName = "senha" name="senha" type="password" id="inputPassword" class="form-control" placeholder="Digite uma senha" >
     <div *ngIf="meuForm.controls.senha.invalid">
       <span *ngIf="meuForm.controls.senha.errors.required" class="form-control alert-danger">
          A senha é obrigatória!
@@ -33,8 +33,20 @@
       </span> 
    </div>
     <label for="inputPasswordConfirma" class="sr-only">Confirme sua senha</label>
-    <input  formControlName = "confirmaSenha" name ="confirmaSenha" type="password" id="inputPasswordConfirma" class="form-control" placeholder="Confirmar senha" required>
+    <input  formControlName="confirmaSenha" name="confirmaSenha" type="password" id="inputPasswordConfirma" class="form-control" placeholder="Confirmar senha" required>
+    <div *ngIf="meuForm.controls.confirmaSenha.invalid">
+      <span *ngIf="meuForm.controls.confirmaSenha.errors.required" class="form-control alert-danger">
+        Por favor confirmar a senha!
+      </span> 
+      <span *ngIf="meuForm.controls.confirmaSenha.errors.minlength" class="form-control alert-danger">
+        Deve conter no mínimo 6 caracteres!
+      </span> 
+   </div>
+   <span *ngIf="meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value && meuForm.controls.confirmaSenha.value.length>=6" class="form-control alert-danger">
+      
+      As senhas não coincidem!
+   </span> 
   </div>
-  
-  <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="meuForm.invalid">Cadastrar</button>
+
+  <button id="cadastra" class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="meuForm.invalid ||meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value ">Cadastrar</button>
 </form>
