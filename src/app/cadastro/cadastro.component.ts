@@ -17,7 +17,7 @@ export class CadastroComponent implements OnInit {
           nome:['',Validators.compose([Validators.required,Validators.pattern("[a-zA-Z ]*")])],
           email:['',Validators.compose([Validators.required, Validators.email])],
           senha:['',Validators.compose([Validators.required,Validators.minLength(6)])],
-          confirmaSenha:['',Validators.compose([Validators.required,Validators.minLength(6)])]
+          confirmaSenha:['',Validators.required]
       });
    }
  

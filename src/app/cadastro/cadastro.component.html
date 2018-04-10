@@ -33,16 +33,14 @@
       </span> 
    </div>
     <label for="inputPasswordConfirma" class="sr-only">Confirme sua senha</label>
-    <input  formControlName="confirmaSenha" name="confirmaSenha" type="password" id="inputPasswordConfirma" class="form-control" placeholder="Confirmar senha" required>
+    <input  formControlName="confirmaSenha" name="confirmaSenha" type="password" id="inputPasswordConfirma" class="form-control" placeholder="Confirmar senha" >
     <div *ngIf="meuForm.controls.confirmaSenha.invalid">
       <span *ngIf="meuForm.controls.confirmaSenha.errors.required" class="form-control alert-danger">
         Por favor confirmar a senha!
       </span> 
-      <span *ngIf="meuForm.controls.confirmaSenha.errors.minlength" class="form-control alert-danger">
-        Deve conter no mínimo 6 caracteres!
-      </span> 
+      
    </div>
-   <span *ngIf="meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value && meuForm.controls.confirmaSenha.value.length>=6" class="form-control alert-danger">
+   <span *ngIf="meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value && meuForm.controls.confirmaSenha.value.length>=1" class="form-control alert-danger">
       
       As senhas não coincidem!
    </span> 
