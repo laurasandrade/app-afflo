@@ -1,13 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {Http,Headers} from '@angular/http';
+import {FormGroup,FormBuilder,Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
+//Validar password minimo 6 caracteres
 export class CadastroComponent implements OnInit {
-
-  constructor() { }
+  http: Http;
+  meuForm: FormGroup;
+  constructor(fb:FormBuilder) {
+      this.meuForm =fb.group({
+          nome:['',Validators.compose([Validators.required,Validators.pattern("[a-zA-Z ]*")])],
+          email:['',Validators.compose([Validators.required, Validators.email])],
+          senha:['',Validators.compose([Validators.required,Validators.minLength(6)])],
+          confirmaSenha:['',Validators.compose([Validators.required,Validators.minLength(6)])]
+      });
+   }
 
   ngOnInit() {
   }

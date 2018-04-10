@@ -6,6 +6,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 const appRoutes: Routes  = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'cadastro', component: CadastroComponent },
    { path: '**', redirectTo: ''}
 ];
 
