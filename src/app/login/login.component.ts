@@ -10,7 +10,6 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 
-
 export class LoginComponent {
 	
     salvaDados: string = '';
