@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
-
+import{OnInit} from '@angular/core'
 
 @Component({
   selector: 'app-cadastro',
@@ -12,18 +12,29 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 export class CadastroComponent implements OnInit {
   http: Http;
   meuForm: FormGroup;
-  constructor(fb:FormBuilder) {
-      this.meuForm =fb.group({
-          nome:['',Validators.compose([Validators.required,Validators.pattern("[a-zA-Z ]*")])],
-          email:['',Validators.compose([Validators.required, Validators.email])],
-          senha:['',Validators.compose([Validators.required,Validators.minLength(6)])],
-          confirmaSenha:['',Validators.required]
-      });
+  constructor(private fb:FormBuilder) {
+      this.http;
+     
    }
  
- 
+/* cadastrar(event){
+   event.preventDefault();
+   let header = new Headers();
+   header.append("Content-type","application/text");
+   this.http.post('v1/fotos',JSON.stringify(this.foto),{ headers:header})//metodo post para alteração
+        .subscribe(()=>{//executa algo após o envio
+            this.foto = new FotoComponent();
+            console.log("Foto enviada com sucesso!");
+        },erro=>console.log(erro));
+ }*/
 
   ngOnInit() {
+    this.meuForm =this.fb.group({
+        nome:['',Validators.compose([Validators.required,Validators.pattern('[a-zA-Z ]*')])],
+            email:['',Validators.compose([Validators.required, Validators.email])],
+            senha:['',Validators.compose([Validators.required,Validators.minLength(6)])],
+            confirmaSenha:['',Validators.required]
+        });
   }
 
 }

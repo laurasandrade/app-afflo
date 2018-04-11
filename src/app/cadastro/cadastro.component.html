@@ -1,9 +1,9 @@
-<form [formGroup]="meuForm" class="form-signin form-group">
+<form [formGroup]="meuForm" class="form-signin form-group row" (submit)="cadastrar($event)">
   <img class="mb-4" src="../assets/logo.png" alt="AFFLO" width="300">
   <h1 class="h3 mb-3 font-weight-normal text-center">Cadastro</h1>
   <div class="form-group">
     <label for="inputNome" class="sr-only">Nome</label>
-    <input  formControlName = "nome" name="nome" type="text" id="inputNome" class="form-control" placeholder="Digite seu nome completo" autofocus autocomplete="off">
+    <input  formControlName = "nome" name="nome"   type="text" id="inputNome" class="form-control" placeholder="Digite seu nome completo" autofocus autocomplete="off">
     <div *ngIf="meuForm.controls.nome.invalid">
       <span *ngIf="meuForm.controls.nome.errors.required" class="form-control alert-danger">
           Nome obrigatório!
