@@ -4,14 +4,31 @@ main h1{
     margin: 20px 0 40px;
     padding: 0;
     text-align: center;
+    width: 100%;
+    
 }
-.questionario-full{}
+
+.full-main{
+   top: 0;
+   position: absolute;
+  width: 90%;
+  
+}
+#enviar{
+    margin-bottom: 5%;
+}
+
 .box-pergunta{
-        margin-bottom: 30px;
+        
         border: 1px solid #4f8196;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 30px;
 }
 .box-pergunta p{
     padding: 10px;
+    font-size: 1.5em;
+  
 }
 .pergunta-head{
     background-color: #93dad5;
