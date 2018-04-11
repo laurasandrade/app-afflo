@@ -22,7 +22,7 @@ export class LoginComponent {
 		 	email: ['', Validators.required],
 		 	senha: ['', Validators.required]
 		 });
-
+     
   }
 
 }

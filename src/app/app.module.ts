@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 import { AngularFireModule } from 'angularfire2';
 
+
 export const firebaseConfig = {
   apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
   authDomain: 'app-afflo.firebaseapp.com',
@@ -15,6 +16,7 @@ export const firebaseConfig = {
   storageBucket: 'app-afflo.appspot.com',
   messagingSenderId: '281776171082'
 };
+
 
 @NgModule({
   declarations: [
