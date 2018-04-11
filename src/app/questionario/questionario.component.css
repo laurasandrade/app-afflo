@@ -1,11 +1,17 @@
 main h1{
     font-weight: bold;
     color: #4f8196;
-    margin: 20px 0 40px;
+    margin: 1% 0 1% 8%;
     padding: 0;
     text-align: center;
+    top: 0;
+    position: absolute;
+
 }
-.questionario-full{}
+.questionario-full{
+    top: 21%;
+    position: absolute;
+}
 .box-pergunta{
         margin-bottom: 30px;
         border: 1px solid #4f8196;
