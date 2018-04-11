@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import * as firebase from 'firebase/app';
@@ -21,8 +21,9 @@ export class LoginComponent {
     salvaDados: string = '';
 	  meuForm: FormGroup;
     http: Http;
+    
 
-  constructor(http: Http, fb : FormBuilder) { 
+  constructor(http: Http, fb : FormBuilder, private loginService: LoginService) { 
      this.http = http;
 		 this.meuForm = fb.group({
 		 	email: ['', Validators.required],
@@ -35,7 +36,7 @@ export class LoginComponent {
 fazerLogin(e) {
    e.preventDefault();
    //chama serviço de login
-   this.loginService.login(mail, password);
+   this.loginService.login(this.email, this.senha)
 
  }
 

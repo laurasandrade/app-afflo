@@ -4,8 +4,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 
 
-
-
 @Injectable()
 
 export class LoginService {
