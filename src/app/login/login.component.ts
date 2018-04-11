@@ -1,7 +1,10 @@
 import {Component, Inject} from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
-
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+import {LoginService} from '../login.service'
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -12,7 +15,9 @@ import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 })
 
 export class LoginComponent {
-	
+  	@Input() email: string;
+    @Input() senha: string;
+
     salvaDados: string = '';
 	  meuForm: FormGroup;
     http: Http;
@@ -25,4 +30,14 @@ export class LoginComponent {
 		 });
 
   }
+
+
+fazerLogin(e) {
+   e.preventDefault();
+   //chama serviço de login
+   this.loginService.login(mail, password);
+
+ }
+
+
 }

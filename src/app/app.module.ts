@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 import { AngularFireModule } from 'angularfire2';
 
+import {LoginService} from './login.service'
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
