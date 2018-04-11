@@ -19,7 +19,7 @@ export class LoginService {
 
 
 
- public login(mail: string, password: string) {
+  public login(mail: string, password: string) {
 
    return new Promise((resolve, reject) => {
 
@@ -27,17 +27,25 @@ export class LoginService {
 
        localStorage['token'] = user.uid;
 
+       console.log('consegui logar');
+
      })
 
      .catch((error) => {
 
-       // this.router.navigate(['/login']);
+       console.log(error);
+
+       console.log('não consegui logar');
 
      });
 
    })
 
    .catch((error) => {
+
+     console.log(error);
+
+     console.log('não consegui logar');
 
    });
 
