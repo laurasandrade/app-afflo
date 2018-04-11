@@ -6,6 +6,15 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
+  authDomain: 'app-afflo.firebaseapp.com',
+  databaseURL: 'https://app-afflo.firebaseio.com',
+  storageBucket: 'app-afflo.appspot.com',
+  messagingSenderId: '281776171082'
+};
 
 @NgModule({
   declarations: [
@@ -18,7 +27,8 @@ import { routing } from './app.routes';
     HttpModule,
     routing,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
