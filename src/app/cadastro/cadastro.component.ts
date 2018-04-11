@@ -16,6 +16,8 @@ export class CadastroComponent implements OnInit {
       this.http;
      
    }
+
+   
  
 /* cadastrar(event){
    event.preventDefault();
@@ -36,5 +38,7 @@ export class CadastroComponent implements OnInit {
             confirmaSenha:['',Validators.required]
         });
   }
+
+  
 
 }

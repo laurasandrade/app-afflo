@@ -1,6 +1,8 @@
-<form [formGroup]="meuForm" class="form-signin form-group row" (submit)="cadastrar($event)">
+
+<div class="container divContainer">
+<form [formGroup]="meuForm" class="form-signin form-group row form" (submit)="cadastrar($event)">
   <img class="mb-4" src="../assets/logo.png" alt="AFFLO" width="300">
-  <h1 class="h3 mb-3 font-weight-normal text-center">Cadastro</h1>
+  <h1 class="h2 mb-3 font-weight-normal text-center">Cadastro</h1>
   <div class="form-group">
     <label for="inputNome" class="sr-only">Nome</label>
     <input  formControlName = "nome" name="nome"   type="text" id="inputNome" class="form-control" placeholder="Digite seu nome completo" autofocus autocomplete="off">
@@ -49,3 +51,4 @@
   <button id="cadastra" class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="meuForm.invalid ||meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value ">Cadastrar</button>
   <button id="volta" class="btn btn-lg btn-primary btn-block" type="submit" [routerLink]="['']" >Voltar</button>
 </form>
+</div>
