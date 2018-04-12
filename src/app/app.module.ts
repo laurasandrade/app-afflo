@@ -8,6 +8,17 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { routing } from './app.routes';
 
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: '<your-key>',
+  authDomain: '<your-project-authdomain>',
+  databaseURL: '<your-database-URL>',
+  storageBucket: '<your-storage-bucket>',
+  messagingSenderId: '<your-messaging-sender-id>'
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +27,8 @@ import { routing } from './app.routes';
     ],
   imports: [
     BrowserModule,
-    routing,FormsModule,ReactiveFormsModule
+    routing,FormsModule,ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
