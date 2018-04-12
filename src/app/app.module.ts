@@ -11,11 +11,11 @@ import { routing } from './app.routes';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  storageBucket: '<your-storage-bucket>',
-  messagingSenderId: '<your-messaging-sender-id>'
+  apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
+  authDomain: 'app-afflo.firebaseapp.com',
+  databaseURL: 'https://app-afflo.firebaseio.com',
+  storageBucket: 'app-afflo.appspot.com',
+  messagingSenderId: '281776171082'
 };
 
 
