@@ -23,7 +23,7 @@ export class LoginComponent {
     http: Http;
     
 
-  constructor(http: Http, fb : FormBuilder, private loginService: LoginService) { 
+  constructor(http: Http, fb : FormBuilder, private loginService: LoginService, private router: Router) { 
      this.http = http;
 		 this.meuForm = fb.group({
 		 	email: ['', Validators.required],
@@ -32,13 +32,8 @@ export class LoginComponent {
 
   }
 
-
-fazerLogin(e) {
-   e.preventDefault();
-   //chama serviço de login
-   this.loginService.login(this.email, this.senha)
-
- }
-
-
+  fazerLogin(e) {
+     e.preventDefault();
+     this.loginService.login(this.email, this.senha)
+  }
 }

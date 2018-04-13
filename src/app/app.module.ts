@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireDatabase } from 'angularfire2/database';
 
 import { LoginService } from './login.service';
 
@@ -20,7 +21,6 @@ export const firebaseConfig = {
  messagingSenderId: '281776171082'
 
 };
-
 
 
 @NgModule({
@@ -41,6 +41,7 @@ export const firebaseConfig = {
  ],
 
  providers: [
+   AngularFireDatabase,
    AngularFireModule,
    AngularFireAuth,
    LoginService
