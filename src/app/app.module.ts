@@ -7,15 +7,16 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { routing } from './app.routes';
-
-import { AngularFireModule } from 'angularfire2';
+import { CadastroService } from './cadastro.service';
+//import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
-  authDomain: 'app-afflo.firebaseapp.com',
-  databaseURL: 'https://app-afflo.firebaseio.com',
-  storageBucket: 'app-afflo.appspot.com',
-  messagingSenderId: '281776171082'
+  apiKey: "AIzaSyCsmK1EsJqyk-2ZwalX9vps9SnhK29SzL0",
+    authDomain: "teste-cadastro-mvp.firebaseapp.com",
+    databaseURL: "https://teste-cadastro-mvp.firebaseio.com",
+    projectId: "teste-cadastro-mvp",
+    storageBucket: "teste-cadastro-mvp.appspot.com",
+    messagingSenderId: "1032867656774"
 };
 
 
@@ -28,7 +29,7 @@ export const firebaseConfig = {
   imports: [
     BrowserModule,
     routing,FormsModule,ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+   // AngularFireModule.initializeApp(firebaseConfig),CadastroService
   ],
   providers: [],
   bootstrap: [AppComponent]

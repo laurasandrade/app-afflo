@@ -17,13 +17,12 @@ export class CadastroComponent implements OnInit {
      
    }
 
-   
  
 /* cadastrar(event){
    event.preventDefault();
    let header = new Headers();
    header.append("Content-type","application/text");
-   this.http.post('v1/fotos',JSON.stringify(this.foto),{ headers:header})//metodo post para alteração
+   this.http.post(https://teste-cadastro-mvp.firebaseio.com/',JSON.stringify(this.foto),{ headers:header})//metodo post para alteração
         .subscribe(()=>{//executa algo após o envio
             this.foto = new FotoComponent();
             console.log("Foto enviada com sucesso!");
