@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
-import {AngularFireModule,AuthProviders,AuthMethods} from 'angularfire2';
+import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 
  const firebaseConfig = {

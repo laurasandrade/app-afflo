@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,Input} from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import{OnInit} from '@angular/core'
@@ -12,9 +12,9 @@ import {AngularFire} from 'angularfire2';
 export class CadastroComponent implements OnInit {
   http: Http;
   meuForm: FormGroup;
-  email:string;
-  senha:string;
-  nome : string;
+  @Input() email:string;
+ @Input senha:string;
+  @Input nome : string;
   constructor(private fb:FormBuilder,public af:AngularFire) {
     this.senha;
     this.email;
