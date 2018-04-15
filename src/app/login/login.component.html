@@ -4,16 +4,16 @@
 
 	<label for="inputEmail" class="sr-only">Email</label>
 	<input name="email" [(ngModel)]="email" formControlName="email" class="form-control"  autocomplete="off" placeholder="Email">
-	<span *ngIf= "meuForm.controls.email.invalid" class="form-control alert-danger">
+<!-- 	<span *ngIf= "meuForm.controls.email.invalid" class="form-control alert-danger">
 		Email obrigatório
-	</span> 
+	</span>  -->
 	<br>
 
 	<label for="inputPassword" class="sr-only">Senha</label>
 	<input  type="password" name="senha" [(ngModel)]="senha" formControlName="senha" class="form-control"  autocomplete="off" placeholder="Senha">
-	<span *ngIf= "meuForm.controls.senha.invalid" class="form-control alert-danger">
+	<!-- <span *ngIf= "meuForm.controls.senha.invalid" class="form-control alert-danger">
 		Senha obrigatória
-	</span> 
+	</span>  -->
 	<br>
 
 	<a routerLink="/cadastro" routerLinkActive="active">Cadastrar</a>

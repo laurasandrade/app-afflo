@@ -17,7 +17,10 @@ export class LoginService {
   public login(mail: string, password: string) {
    return new Promise((resolve, reject) => {
      this.afAuth.auth.signInWithEmailAndPassword(mail, password).then((user) => {
-       localStorage['token'] = user.uid;
+      // localStorage.setItem('token', JSON.stringify({ email: mail }));
+       // var tokenstr = localStorage.getItem('token');
+       // var token = JSON.parse(tokenstr);
+       // token.email;
        console.log('Consegui logar');
      })
 
