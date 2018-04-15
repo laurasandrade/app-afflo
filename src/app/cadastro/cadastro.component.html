@@ -5,7 +5,7 @@
   <h1 class="h2 mb-3 font-weight-normal text-center">Cadastro</h1>
   <div class="form-group">
     <label for="inputNome" class="sr-only">Nome</label>
-    <input  formControlName = "nome" name="nome"   type="text" id="inputNome" class="form-control" placeholder="Digite seu nome completo" autofocus autocomplete="off">
+    <input  formControlName = "nome" name="nome" [(ngModel)]="nome"  type="text" id="inputNome" class="form-control" placeholder="Digite seu nome completo" autofocus autocomplete="off">
     <div *ngIf="meuForm.controls.nome.invalid">
       <span *ngIf="meuForm.controls.nome.errors.required" class="form-control alert-danger">
           Nome obrigatório!
@@ -15,7 +15,7 @@
       </span> 
    </div>
     <label for="inputEmail" class="sr-only">Email</label>
-    <input  formControlName = "email" name="email" type="email" id="inputEmail" class="form-control" placeholder="Digite seu email" autocomplete="off">
+    <input  formControlName = "email" name="email" type="email" [(ngModel)]="email" id="inputEmail" class="form-control" placeholder="Digite seu email" autocomplete="off">
     <div *ngIf="meuForm.controls.email.invalid">
       <span *ngIf="meuForm.controls.email.errors.required" class="form-control alert-danger">
           Email obrigatório!
@@ -25,7 +25,7 @@
       </span> 
    </div>
     <label for="inputPassword" class="sr-only">Senha</label>
-    <input  formControlName = "senha" name="senha" type="password" id="inputPassword" class="form-control" placeholder="Digite uma senha" >
+    <input  formControlName = "senha" name="senha" [(ngModel)]="senha" type="password" id="inputPassword" class="form-control" placeholder="Digite uma senha" >
     <div *ngIf="meuForm.controls.senha.invalid">
       <span *ngIf="meuForm.controls.senha.errors.required" class="form-control alert-danger">
          A senha é obrigatória!
@@ -48,7 +48,7 @@
    </span> 
   </div>
 
-  <button id="cadastra" class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="meuForm.invalid ||meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value ">Cadastrar</button>
+  <button id="cadastra" class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="meuForm.invalid ||meuForm.controls.confirmaSenha.value != meuForm.controls.senha.value " (click)="cadstrar()">Cadastrar</button>
   <button id="volta" class="btn btn-lg btn-primary btn-block" type="submit" [routerLink]="['']" >Voltar</button>
 </form>
 </div>

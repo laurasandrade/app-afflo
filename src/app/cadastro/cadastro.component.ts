@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import {FormGroup,FormBuilder,Validators} from '@angular/forms';
 import{OnInit} from '@angular/core'
-
+import {AngularFire} from 'angularfire2';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -12,32 +12,47 @@ import{OnInit} from '@angular/core'
 export class CadastroComponent implements OnInit {
   http: Http;
   meuForm: FormGroup;
-  constructor(private fb:FormBuilder) {
+  email:string;
+  senha:string;
+  nome : string;
+  constructor(private fb:FormBuilder,public af:AngularFire) {
+    this.senha;
+    this.email;
+    this.nome;
+    
       this.http;
-     
-   }
-
- 
-/* cadastrar(event){
-   event.preventDefault();
-   let header = new Headers();
-   header.append("Content-type","application/text");
-   this.http.post(https://teste-cadastro-mvp.firebaseio.com/',JSON.stringify(this.foto),{ headers:header})//metodo post para alteração
-        .subscribe(()=>{//executa algo após o envio
-            this.foto = new FotoComponent();
-            console.log("Foto enviada com sucesso!");
-        },erro=>console.log(erro));
- }*/
-
-  ngOnInit() {
-    this.meuForm =this.fb.group({
+      this.meuForm =this.fb.group({
         nome:['',Validators.compose([Validators.required,Validators.pattern('[a-zA-Z ]*')])],
             email:['',Validators.compose([Validators.required, Validators.email])],
             senha:['',Validators.compose([Validators.required,Validators.minLength(6)])],
             confirmaSenha:['',Validators.required]
         });
   }
+   
 
+   cadastrar(){
+     this.af.auth.createUser({email:this.email,password:this.senha}).then((authObj)=>{
+        console.log(authObj);
+        this.af.database.object("candidato/"+authObj.uid).update({
+          email:this.email,
+          id: authObj.uid,
+          senha: this.senha,
+          nome:this.nome
+        }).then(()=>{
+            window.location.href = '/';
+        }).catch(erro=>{
+          console.log(erro);
+        })
+     }).catch((erro)=>{
+        console.log(erro);
+     })
+   }
+
+ 
+
+  ngOnInit() {
+
+  }
   
 
 }

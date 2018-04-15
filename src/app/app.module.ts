@@ -6,13 +6,10 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuth } from "angularfire2/auth";
-import { AngularFireDatabase } from 'angularfire2/database';
+import {AngularFireModule,AuthProviders,AuthMethods} from 'angularfire2';
 
-import { LoginService } from './login.service';
 
-export const firebaseConfig = {
+ const firebaseConfig = {
 
  apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
  authDomain: 'app-afflo.firebaseapp.com',
@@ -22,6 +19,11 @@ export const firebaseConfig = {
 
 };
 
+const myFirebaseAuthConfig ={
+  provider : AuthProviders.Password,
+  method: AuthMethods.Password
+};
+
 
 @NgModule({
 
@@ -29,6 +31,8 @@ export const firebaseConfig = {
    AppComponent,
    LoginComponent,
    CadastroComponent
+  
+   
  ],
 
  imports: [
@@ -37,15 +41,13 @@ export const firebaseConfig = {
    routing,
    FormsModule,
    ReactiveFormsModule,
-   AngularFireModule.initializeApp(firebaseConfig)
+   AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
+   
+  
  ],
 
- providers: [
-   AngularFireDatabase,
-   AngularFireModule,
-   AngularFireAuth,
-   LoginService
- ],
+ providers: [],
+ 
 
  bootstrap: [AppComponent]
 
