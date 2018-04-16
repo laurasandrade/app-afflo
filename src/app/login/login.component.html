@@ -1,23 +1,23 @@
-<form [formGroup]="meuForm" class="form-signin">
+<form (submit)="fazerLogin($event)" [formGroup]="meuForm" class="form-signin">
 	<img class="mb-4" src="../assets/logo.png" alt="AFFLO" width="300">
 	<h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
 	<label for="inputEmail" class="sr-only">Email</label>
 	<input name="email" [(ngModel)]="email" formControlName="email" class="form-control"  autocomplete="off" placeholder="Email">
-	<span *ngIf= "meuForm.controls.email.invalid" class="form-control alert-danger">
+<!-- 	<span *ngIf= "meuForm.controls.email.invalid" class="form-control alert-danger">
 		Email obrigatório
-	</span> 
+	</span>  -->
 	<br>
 
 	<label for="inputPassword" class="sr-only">Senha</label>
 	<input  type="password" name="senha" [(ngModel)]="senha" formControlName="senha" class="form-control"  autocomplete="off" placeholder="Senha">
-	<span *ngIf= "meuForm.controls.senha.invalid" class="form-control alert-danger">
+	<!-- <span *ngIf= "meuForm.controls.senha.invalid" class="form-control alert-danger">
 		Senha obrigatória
-	</span> 
+	</span>  -->
 	<br>
 
 	<a routerLink="/cadastro" routerLinkActive="active">Cadastrar</a>
 
-	<button type="submit" class="btn btn-secondary btn-lg" [disabled]= "meuForm.invalid" >Entrar</button>
+	<button type="submit" class="btn btn-secondary btn-lg" [disabled]= "meuForm.invalid">Entrar</button>
 	
 </form>
