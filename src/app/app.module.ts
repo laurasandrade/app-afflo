@@ -7,6 +7,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 
 
  const firebaseConfig = {
@@ -41,8 +42,8 @@ const myFirebaseAuthConfig ={
    routing,
    FormsModule,
    ReactiveFormsModule,
-   AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
-   
+   AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig),
+   AngularFireAuthModule
   
  ],
 
