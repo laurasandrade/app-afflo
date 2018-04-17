@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule } from '@angular/forms';
+import { ActivatedRoute ,Router} from '@angular/router';
 declare var firebase: any;
 
 @Component({
@@ -11,6 +12,7 @@ declare var firebase: any;
 })
 export class QuestionarioComponent implements OnInit {
 
+  router : Router;
   resposta1: boolean;
   resposta2: boolean;
   resposta3: boolean;
@@ -21,6 +23,7 @@ export class QuestionarioComponent implements OnInit {
   resposta8: boolean;
   resposta9: boolean;
   resposta10: boolean;
+  usuario: string;
   
   constructor() {    
   }
@@ -43,7 +46,10 @@ export class QuestionarioComponent implements OnInit {
       questao8: this.resposta8,
       questao9: this.resposta9,
       questao10: this.resposta10,
+      usuario: localStorage.getItem("usuario")
     });
+
+    this.router.navigate(['resultado']);
   }
 
   onRadioClicked(myRadio){

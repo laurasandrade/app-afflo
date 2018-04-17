@@ -12,6 +12,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFireDatabase } from 'angularfire2/database';
 
 import { LoginService } from './login.service';
+import { ResultadoComponent } from './resultado/resultado.component';
 
 export const firebaseConfig = {
 
@@ -30,7 +31,8 @@ export const firebaseConfig = {
    AppComponent,
    LoginComponent,
    CadastroComponent,
-   QuestionarioComponent
+   QuestionarioComponent,
+   ResultadoComponent
  ],
 
  imports: [

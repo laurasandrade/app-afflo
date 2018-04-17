@@ -24,6 +24,7 @@ export class LoginService {
        // token.email;
        this.router.navigate(['questionario']);
        console.log('Consegui logar');
+       window.localStorage.setItem('usuario', mail);
      })
 
      .catch((error) => {
