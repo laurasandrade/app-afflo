@@ -21,10 +21,11 @@ export class LoginComponent {
     salvaDados: string = '';
 	  meuForm: FormGroup;
     http: Http;
-    
+    router:Router;
 
-  constructor(http: Http, fb : FormBuilder, private loginService: LoginService, private router: Router) { 
+  constructor(http: Http, fb : FormBuilder, private loginService: LoginService, router: Router) { 
      this.http = http;
+     this.router=router;
 		 this.meuForm = fb.group({
 		 	email: ['', Validators.required],
 		 	senha: ['', Validators.required]
@@ -34,6 +35,7 @@ export class LoginComponent {
 
   fazerLogin(e) {
      // e.preventDefault();
-     this.loginService.login(this.email, this.senha)
+     this.loginService.login(this.email, this.senha);
+    this.router.navigate(['questionario']);
   }
 }
