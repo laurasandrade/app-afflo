@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
-import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
+import { AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 
 
  const firebaseConfig = {
@@ -19,10 +20,10 @@ import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 
 };
 
-const myFirebaseAuthConfig ={
+/*const myFirebaseAuthConfig ={
   provider : AuthProviders.Password,
   method: AuthMethods.Password
-};
+};*/
 
 
 @NgModule({
@@ -41,8 +42,8 @@ const myFirebaseAuthConfig ={
    routing,
    FormsModule,
    ReactiveFormsModule,
-   AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
-   
+   AngularFireModule.initializeApp(firebaseConfig),
+   AngularFireAuthModule
   
  ],
 
