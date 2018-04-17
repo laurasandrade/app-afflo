@@ -30,9 +30,6 @@ export class QuestionarioComponent implements OnInit {
 
   adiciona(event){
     event.preventDefault();
-    
-    // console.log("entrou adiciona");
-    console.log(this.resposta10);
 
     firebase.database().ref('respostas/').push({
       questao1: this.resposta1,
