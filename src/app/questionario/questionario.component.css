@@ -1,0 +1,52 @@
+main h1{
+    font-weight: bold;
+    color: #4f8196;
+    margin: 1% 0 1% 8%;
+    padding: 0;
+    text-align: center;
+    top: 0;
+    position: absolute;
+
+}
+.questionario-full{
+    top: 21%;
+    position: absolute;
+}
+.box-pergunta{
+        margin-bottom: 30px;
+        border: 1px solid #4f8196;
+}
+.box-pergunta p{
+    padding: 10px;
+}
+.pergunta-head{
+    background-color: #93dad5;
+    color: #ffffff;
+    padding: 20px 30px;
+    
+}
+.respostas{
+    padding: 20px;
+    
+}
+input[type=checkbox]{
+    display:none;
+}
+.outside{
+    position: relative;
+    width:15px;
+    height: 15px;
+    border: 1px solid #000000;
+    display:inline-block;
+}
+.inside{
+    positin: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -5px;
+    width: 10px;
+    height: 10px;
+}
+input[type=checkbox]:checked + label .inside{
+    background: #000000;
+}

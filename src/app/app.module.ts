@@ -4,13 +4,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { QuestionarioComponent } from './questionario/questionario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
-import { AngularFireModule} from 'angularfire2';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireDatabase } from 'angularfire2/database';
 
+import { LoginService } from './login.service';
 
- const firebaseConfig = {
+export const firebaseConfig = {
 
  apiKey: 'AIzaSyAFslbeTC63m9UH39I_G0ujnElbgLctKIQ',
  authDomain: 'app-afflo.firebaseapp.com',
@@ -20,20 +23,14 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 
 };
 
-/*const myFirebaseAuthConfig ={
-  provider : AuthProviders.Password,
-  method: AuthMethods.Password
-};*/
-
 
 @NgModule({
 
  declarations: [
    AppComponent,
    LoginComponent,
-   CadastroComponent
-  
-   
+   CadastroComponent,
+   QuestionarioComponent
  ],
 
  imports: [
@@ -42,13 +39,15 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
    routing,
    FormsModule,
    ReactiveFormsModule,
-   AngularFireModule.initializeApp(firebaseConfig),
-   AngularFireAuthModule
-  
+   AngularFireModule.initializeApp(firebaseConfig)
  ],
 
- providers: [],
- 
+ providers: [
+   AngularFireDatabase,
+   AngularFireModule,
+   AngularFireAuth,
+   LoginService
+ ],
 
  bootstrap: [AppComponent]
 

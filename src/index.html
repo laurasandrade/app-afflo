@@ -13,5 +13,19 @@
 </head>
 <body>
   <app-root></app-root>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDms63bzTytKDoHfuvfba_X2vyoGRT8o-U",
+    authDomain: "landingpageii-3048a.firebaseapp.com",
+    databaseURL: "https://landingpageii-3048a.firebaseio.com",
+    projectId: "landingpageii-3048a",
+    storageBucket: "landingpageii-3048a.appspot.com",
+    messagingSenderId: "79183053094"
+  };
+  firebase.initializeApp(config);
+  database = firebase.database();
+  </script>
 </body>
 </html>

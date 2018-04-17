@@ -1,15 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
+import {Http,Headers} from '@angular/http';
+import {FormGroup,FormBuilder,Validators} from '@angular/forms';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+import {LoginService} from '../login.service'
+import { Router } from "@angular/router";
+
 
 @Component({
+    moduleId: module.id,
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
-  constructor() { }
+export class LoginComponent {
+  	@Input() email: string;
+    @Input() senha: string;
 
-  ngOnInit() {
+    salvaDados: string = '';
+	  meuForm: FormGroup;
+    http: Http;
+    
+
+  constructor(http: Http, fb : FormBuilder, private loginService: LoginService, private router: Router) { 
+     this.http = http;
+		 this.meuForm = fb.group({
+		 	email: ['', Validators.required],
+		 	senha: ['', Validators.required]
+		 });
+
   }
 
+  fazerLogin(e) {
+     // e.preventDefault();
+     this.loginService.login(this.email, this.senha)
+  }
 }

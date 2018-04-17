@@ -1,0 +1,311 @@
+<form  (submit)="adiciona($event)">
+  <main role="main" class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+      <h1>Questionário de avaliação de Growth Hacker</h1>
+      <div class="questionario-full">
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>1. Qual é o funil usado por um Growth Hacker?</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta1 (click)="onRadioClicked(resposta1)" name="resposta1" value="true" type="radio"> AARRR
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta2 (click)="onRadioClicked(resposta2)" name="resposta1" value="false" type="radio"> Funil de vendas
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta3 (click)="onRadioClicked(resposta3)" name="resposta1" value="false" type="radio"> AIDA
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta4 (click)="onRadioClicked(resposta4)" name="resposta1" value="false" type="radio"> Nenhuma das alternativas
+                </label>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>2. Das ferramentas abaixo, qual NÃO é utilizada por um Growth Hacker?</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta5 (click)="onRadioClicked(resposta5)" name="resposta2" value="false" type="radio"> SEO
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta6 (click)="onRadioClicked(resposta6)" name="resposta2" value="false" type="radio"> SEM
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta7 (click)="onRadioClicked(resposta7)" name="resposta2" value="false" type="radio"> Teste A/B
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta8 (click)="onRadioClicked(resposta8)" name="resposta2" value="true" type="radio"> VS Code
+                </label>
+              </div>
+              <br>
+          </div>
+        </div>
+
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>3. Você foi contratado por uma Startup que vende SAAS e chegando na empresa, quais são as métricas que você vai avaliar antes de partir para a ação?</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta9 (click)="onRadioClicked(resposta9)" name="resposta3" value="true" type="radio"> CAC, MRR, LVT e Churn
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta10 (click)="onRadioClicked(resposta10)" name="resposta3" value="false" type="radio"> CPA, CPC, CPM e ROI
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta11 (click)="onRadioClicked(resposta11)" name="resposta3" value="false" type="radio"> CPC, LVT e ROI
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta12 (click)="onRadioClicked(resposta12)" name="resposta3" value="false" type="radio"> Nenhuma das alternativas
+                </label>
+              </div>
+          </div>
+        </div>
+
+        
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>4. O processo de Growth Marketing pode ser definido como:</p>
+          </div>
+
+          <div class="respostas">
+            
+              <div class="radio">
+                <label>
+                  <input #resposta13 (click)="onRadioClicked(resposta13)" name="resposta4" value="false" type="radio"> Inbound Marketing, Persona, Conteúdo, UX, Mídias Sociais, PPC e ROI
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta14 (click)="onRadioClicked(resposta14)" name="resposta4" value="false" type="radio"> Outbound, Neuromarketing e pesquisa de mercado
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta15 (click)="onRadioClicked(resposta15)" name="resposta4" value="false" type="radio"> Criação de conteúdo, SEO e muitos experimentos
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta16 (click)="onRadioClicked(resposta16)" name="resposta4" value="true" type="radio"> Todas as anteriores
+                </label>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>5. Para trackear o tráfego do visitante em seu site, você utiliza:</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta17 (click)="onRadioClicked(resposta17)" name="resposta5" value="false" type="radio"> Analytics e Mailchimp
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta18 (click)="onRadioClicked(resposta18)" name="resposta5" value="true" type="radio"> UTM e URL Builder
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta19 (click)="onRadioClicked(resposta19)" name="resposta5" value="false" type="radio"> Pixel do facebook e Analytics
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta20 (click)="onRadioClicked(resposta20)" name="resposta5" value="false" type="radio"> Hubspot e Adwords
+                </label>
+              </div>
+          </div>
+        </div>
+        
+        
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>6. Você mandou uma campanha de e-mail marketing e percebeu que o CTA está ótimo, mas o CTR dos e-mails está baixo. Qual o problema do e-mail?</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta21 (click)="onRadioClicked(resposta21)" name="resposta6" value="false" type="radio"> Keyword planer está errado
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta22 (click)="onRadioClicked(resposta22)" name="resposta6" value="false" type="radio"> Problema de layout
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta23 (click)="onRadioClicked(resposta23)" name="resposta6" value="false" type="radio"> SPAMMER
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta24 (click)="onRadioClicked(resposta24)" name="resposta6" value="true" type="radio"> Nenhuma das alternativas anteriores
+                </label>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">						
+            <p>7. Você tem um ótimo índice de CRO em novos clientes e seu CAC está alto. Qual estratégia abaixo pode resolver o problema?</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta25 (click)="onRadioClicked(resposta25)" name="resposta7" value="true" type="radio"> Referral
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta26 (click)="onRadioClicked(resposta26)" name="resposta7" value="false" type="radio"> Adwords
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta27 (click)="onRadioClicked(resposta27)" name="resposta7" value="false" type="radio"> Criação de Conteúdo
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta28 (click)="onRadioClicked(resposta28)" name="resposta7" value="false" type="radio"> Nenhuma das alternativas anteriores
+                </label>
+              </div>
+          </div>
+        </div>	
+
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>8. Quem indica amigo é. Qual etapa do funil será trabalhada?</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta29 (click)="onRadioClicked(resposta29)" name="resposta8" value="false" type="radio"> Aquisição
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta30 (click)="onRadioClicked(resposta30)" name="resposta8" value="false" type="radio"> Ativação
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta31 (click)="onRadioClicked(resposta31)" name="resposta8" value="false" type="radio"> Retenção
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta32 (click)="onRadioClicked(resposta32)" name="resposta8" value="true" type="radio"> Referência
+                </label>
+              </div>
+          </div>
+        </div>
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>9. O termo Growth Hacking foi cunhado por:</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta33 (click)="onRadioClicked(resposta33)" name="resposta9" value="false" type="radio"> Mark Zuckerberg
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta34 (click)="onRadioClicked(resposta34)" name="resposta9" value="false" type="radio"> Neil Patel
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta35 (click)="onRadioClicked(resposta35)" name="resposta9" value="true" type="radio"> Sean Ellis
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta36 (click)="onRadioClicked(resposta36)" name="resposta9" value="false" type="radio"> Vin Clancy
+                </label>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="box-pergunta">
+          <div class="pergunta-head">
+            <p>10. O Ice Score é utilizado para:</p>
+          </div>
+
+          <div class="respostas">
+              <div class="radio">
+                <label>
+                  <input #resposta37 (click)="onRadioClicked(resposta37)" name="resposta10" value="false" type="radio"> Validação de check out
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta38 (click)="onRadioClicked(resposta38)" name="resposta10" value="false" type="radio"> Automatizar processos de Growth
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta39 (click)="onRadioClicked(resposta39)" name="resposta10"  value="true" type="radio"> Priorizar experimentos
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input #resposta40 (click)="onRadioClicked(resposta40)" name="resposta10"  value="false" type="radio"> Votação de Scrum
+                </label>
+              </div>
+          </div>
+        </div>
+        <button>Enviar</button>
+
+      </div>
+    </div>
+  </main>
+</form>  
+
