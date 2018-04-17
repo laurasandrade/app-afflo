@@ -33,7 +33,7 @@ export class LoginComponent {
   }
 
   fazerLogin(e) {
-     e.preventDefault();
+     // e.preventDefault();
      this.loginService.login(this.email, this.senha)
   }
 }

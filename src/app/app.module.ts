@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { QuestionarioComponent } from './questionario/questionario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routes';
 import { AngularFireModule } from 'angularfire2';
@@ -28,7 +29,8 @@ export const firebaseConfig = {
  declarations: [
    AppComponent,
    LoginComponent,
-   CadastroComponent
+   CadastroComponent,
+   QuestionarioComponent
  ],
 
  imports: [
