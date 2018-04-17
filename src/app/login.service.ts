@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
-
+import { Router } from "@angular/router";
 @Injectable()
 
 export class LoginService {
 
  user: Observable<firebase.User>;
-
- constructor(public afAuth: AngularFireAuth) {
+ router:Router;
+ constructor(public afAuth: AngularFireAuth,router:Router) {
    this.user = afAuth.authState
+   this.router=router;
  }
 
 
@@ -21,11 +22,13 @@ export class LoginService {
        // var tokenstr = localStorage.getItem('token');
        // var token = JSON.parse(tokenstr);
        // token.email;
+       this.router.navigate(['questionario']);
        console.log('Consegui logar');
      })
 
      .catch((error) => {
        console.log(error);
+       alert("Usuário não cadastrado!");
        console.log('Não consegui logar');
      });
    })

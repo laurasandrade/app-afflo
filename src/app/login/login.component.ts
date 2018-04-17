@@ -35,7 +35,10 @@ export class LoginComponent {
 
   fazerLogin(e) {
      // e.preventDefault();
-     this.loginService.login(this.email, this.senha);
-    this.router.navigate(['questionario']);
+    
+      this.loginService.login(this.email, this.senha)
+      
+     
+    
   }
 }
