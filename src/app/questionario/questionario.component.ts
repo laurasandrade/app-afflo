@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule } from '@angular/forms';
-import { ActivatedRoute ,Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var firebase: any;
 
 @Component({
@@ -25,7 +25,8 @@ export class QuestionarioComponent implements OnInit {
   resposta10: boolean;
   usuario: string;
   
-  constructor() {    
+  constructor(router:Router) {    
+   this.router = router;    
   }
 
   ngOnInit() {
